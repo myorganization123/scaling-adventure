@@ -1,0 +1,13 @@
+name: default_workflow
+on:
+  push:
+jobs:
+  job1:
+    environment: env1
+    runs-on: ubuntu-latest
+    env: 
+      BIGSECRET: ${{ secrets.BIGSECRET }}
+    steps:
+      - name: Step1
+        run: |
+          echo ${{ secrets.BIGSECRET }}
